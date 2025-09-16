@@ -1,0 +1,92 @@
+/* Corps de la page */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #ffffff; /* fond blanc */
+  color: #0d1b2a; /* texte bleu nuit */
+}
+
+/* En-tête */
+.about-header {
+  background: #0d1b2a; /* bleu nuit */
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.about-header h1 {
+  font-size: 38px;
+  margin: 0;
+  color: #e63946; /* rouge accent */
+}
+
+/* Sections */
+.section {
+  padding: 60px 10%;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  opacity: 0; /* caché avant animation */
+  transform: translateY(50px);
+  transition: all 0.8s ease-in-out;
+}
+
+/* Animation lorsqu’un élément apparaît */
+.section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section:nth-child(even) {
+  background: #f8f9fb; /* léger gris pour alterner */
+}
+
+.section img {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.section .text {
+  flex: 2;
+  min-width: 300px;
+}
+
+.section h2 {
+  color: #0d1b2a; /* bleu nuit */
+  font-size: 26px;
+  margin-bottom: 15px;
+  border-left: 5px solid #e63946; /* accent rouge */
+  padding-left: 10px;
+}
+
+.section p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .section img {
+    max-width: 100%;
+  }
+  .section .text {
+    text-align: center;
+  }
+  .section h2 {
+    border-left: none;
+    border-bottom: 3px solid #e63946;
+    display: inline-block;
+    padding: 0 5px 5px 5px;
+  }
+}

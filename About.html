@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - WE PROCESS</title>
+  <link rel="stylesheet" href="about.css">
+</head>
+<body>
+
+  <!-- Titre -->
+  <header class="about-header">
+    <h1>About Us</h1>
+  </header>
+
+  <!-- Bloc 20 ans d’expérience -->
+  <section class="section">
+    <div class="text">
+      <h2>Our Experience</h2>
+      <p>
+        With over 20 years of experience in the pharmaceutical industry, 
+        <strong>WE PROCESS</strong> is a reliable partner in offering innovative solutions for 
+        the design, development, and implementation of cleanrooms, life science facilities, 
+        and medical environments. <br><br>
+        Modern engineering practices, regulatory compliance, and a thorough understanding of 
+        GMP standards enable us to deliver complete solutions that satisfy the highest quality standards.
+      </p>
+    </div>
+    <img src="exp.jpg" alt="Experience">
+  </section>
+
+  <!-- Bloc Our Commitment -->
+  <section class="section">
+    <img src="commitment.jpg" alt="Commitment">
+    <div class="text">
+      <h2>Our Commitment</h2>
+      <p>
+        At <strong>WE PROCESS</strong>, we are committed to quality, reliability, and innovation. 
+        We partner with our clients to create cutting-edge environments that support healthcare 
+        advancements and life-saving innovations.
+      </p>
+    </div>
+  </section>
+
+  <!-- Bloc extra photo -->
+  <section class="section">
+    <div class="text">
+      <h2>Innovation & Growth</h2>
+      <p>
+        We continuously invest in modern technologies and sustainable practices to deliver 
+        solutions that not only meet current industry standards but also anticipate future challenges. 
+        Our vision is to support global healthcare development through excellence and innovation.
+      </p>
+    </div>
+    <img src="innovation.jpg" alt="Innovation">
+  </section>
+
+  <script>
+    // Quand la page est chargée
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll(".section");
+
+  // Fonction pour afficher les sections au scroll
+  function revealOnScroll() {
+    sections.forEach(sec => {
+      const rect = sec.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 50) {
+        sec.classList.add("show");
+      }
+    });
+  }
+
+  // Lancer une fois au chargement
+  revealOnScroll();
+
+  // Vérifier à chaque scroll
+  window.addEventListener("scroll", revealOnScroll);
+});
+  </script>
+   

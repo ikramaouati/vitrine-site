@@ -190,10 +190,511 @@ body {
 
   .nav-links.active {
     left: 0;
-  }
+  } 
+}
 
   .menu-toggle {
     display: block;
   }
+  
+  /* Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100%;
 }
-	
+
+
+
+
+  
+  
+/* Animation au scroll */
+.show {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Section de couverture */
+.hero {
+  position: relative;
+  min-height: 100vh; /* au lieu de height fixe */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  padding: 20px;
+}
+
+/* Image en arrière-plan personnalisée */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url('photo.jpg') no-repeat center center/cover;
+  z-index: -1;
+  filter: brightness(0.5);
+  animation: zoomIn 20s infinite alternate ease-in-out;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+/* Contenu */
+.hero-content {
+  z-index: 2;
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin: 0;
+}
+
+.highlight {
+  color: #00aaff; /* bleu clair */
+}
+
+/* Texte animé */
+.typing {
+  font-size: 2rem;
+  margin-top: 10px;
+  color: #00aaff;
+  border-right: 3px solid white;
+  display: inline-block;
+  padding-right: 5px;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Bouton Learn More */
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 30px;
+  background: #00aaff;
+  color: white;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #0077aa;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .typing {
+    font-size: 1.4rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+/* === Page Services === */
+
+  
+/* === Section Expertise === */
+.expertise {
+  background: #ffffff;               /* Fond blanc */
+  padding: 100px 20px;               /* Espacement interne */
+  text-align: center;                /* Tout centré */
+}
+
+.expertise h2 {
+  font-size: 2.5rem;                 /* Taille du titre */
+  font-weight: bold;                 /* Gras */
+  color: #0a2342;                    /* Bleu nuit */
+  margin-bottom: 10px;               /* Espace bas */
+  opacity: 0;                        /* Invisible pour animation */
+  transform: translateY(-40px);      /* Décalé vers le haut */
+  transition: all 1s ease;           /* Transition douce */
+}
+
+.expertise-subtitle {
+  font-size: 1.1rem;                 /* Texte plus petit */
+  color: #333;                       /* Gris foncé */
+  max-width: 700px;                  /* Largeur max */
+  margin: 0 auto 50px;               /* Centré avec espace bas */
+  opacity: 0;
+  transform: translateY(-40px);
+  transition: all 1.2s ease;
+}
+
+/* === Conteneur des boxes === */
+.expertise-boxes {
+  display: grid;                     /* Organisation en grille */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;                         /* Espace entre les boxes */
+}
+
+/* === Style de chaque box === */
+.expertise-box {
+  background: #f9f9f9;               /* Fond gris clair */
+  border: 2px solid #0a2342;         /* Bordure bleu nuit */
+  border-left: 8px solid #e63946;    /* Accent rouge */
+  border-radius: 12px;               /* Coins arrondis */
+  padding: 30px 20px;                /* Espacement interne */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  text-align: left;                  /* Texte aligné à gauche */
+  opacity: 0;                        /* Invisible pour animation */
+  transform: translateY(60px);       /* Décalé vers le bas */
+  transition: all 0.8s ease;         /* Transition douce */
+}
+
+/* Icône */
+.expertise-box i {
+  font-size: 40px;                   /* Taille icône */
+  color: #0a2342;                    /* Bleu nuit */
+  margin-bottom: 15px;
+}
+
+/* Titre de la box */
+.expertise-box h3 {
+  font-size: 1.3rem;
+  color: #0a2342;
+  margin-bottom: 10px;
+}
+
+/* Texte de la box */
+.expertise-box p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Animation : quand visible */
+.show {
+  opacity: 1 !important;             /* Devient visible */
+  transform: translateY(0) !important;
+}
+
+/* Effet hover */
+.expertise-box:hover {
+  transform: translateY(-10px);      /* Monte un peu */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+
+
+/* Section Get Started */
+
+.get-started {
+  background: #ffffff;               /* Fond blanc */
+  text-align: center;                /* Centrer tout */
+  padding: 100px 20px;               /* Espacement global */
+}
+
+.get-started h2 {
+  font-size: 2.6rem;                 /* Titre un peu plus grand */
+  font-weight: bold;                 /* Gras */
+  color: #0a2342;                    /* Bleu nuit */
+  margin-bottom: 15px;               /* Espace bas */
+  position: relative;                /* Nécessaire pour l’accent décoratif */
+  display: inline-block;
+  opacity: 0;                        /* Invisible au départ */
+  transform: translateY(-40px);      /* Décalé vers le haut */
+  transition: all 1s ease;           /* Animation fluide */
+}
+
+/* Petite barre rouge décorative sous le titre */
+.get-started h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #e63946;               /* Rouge */
+  margin: 10px auto 0;               /* Centré sous le titre */
+  border-radius: 2px;
+}
+
+.get-started p {
+  font-size: 1.1rem;
+  color: #333;                       /* Gris foncé */
+  max-width: 700px;
+  margin: 0 auto 50px;
+  line-height: 1.6;
+  opacity: 0;                        /* Invisible au départ */
+  transform: translateY(-40px);      /* Décalé vers le haut */
+  transition: all 1.2s ease;         /* Animation fluide */
+}
+
+/* === Cartes === */
+.field-cards {
+  display: grid;                     /* Grille responsive */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;                         /* Espace entre cartes */
+}
+
+.field-card {
+  background: #f9f9f9;               /* Fond gris clair */
+  border: 2px solid #0a2342;         /* Bordure bleu nuit */
+  border-top: 6px solid #e63946;     /* Accent rouge en haut */
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  opacity: 0;                        /* Invisible au départ */
+  transform: translateY(60px);       /* Décalé vers le bas */
+}
+
+/* Hover sur carte */
+.field-card:hover {
+  transform: translateY(-10px);      /* Monte un peu */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* Icône */
+.field-card i {
+  font-size: 40px;
+  color: #0a2342;                    /* Bleu nuit */
+  margin-bottom: 15px;
+}
+
+/* Titre de carte */
+.field-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #0a2342;
+  margin-bottom: 10px;
+}
+
+/* Bouton */
+.field-card button {
+  margin-top: 15px;
+  padding: 8px 20px;
+  background: #0a2342;               /* Bleu nuit */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.field-card button:hover {
+  background: #133b63;               /* Bleu plus clair */
+  cursor: pointer;
+}
+
+/* === Animation activée par JS === */
+.show {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+
+  
+/* === Page About === */
+
+  
+
+
+  
+
+
+
+
+
+
+
+/* ===== Description Section ===== */
+.description {
+  background: #ffffff; /* fond blanc */
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.desc-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #002b5c; /* bleu nuit */
+  margin-bottom: 20px;
+
+  /* Animation start */
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+
+.desc-text {
+  font-size: 1.2rem;
+  color: #004080; /* bleu clair */
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+
+  /* Animation start */
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1.2s ease;
+}
+
+/* Quand visible */
+.show {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+/* 3photo */
+/* Section des photos */
+.expertise-photos {
+  background: #ffffff; /* Fond blanc */
+  padding: 50px 20px;
+  text-align: center;
+}
+
+/* Conteneur des 3 photos */
+.photos-container {
+  display: flex; /* Inline (3 photos côte à côte) */
+  justify-content: center;
+  gap: 30px; /* Espace entre les photos */
+  flex-wrap: wrap; /* Pour qu’elles passent en ligne suivante sur petit écran */
+}
+
+/* Style de chaque photo */
+.photo-card {
+  background: #f9f9f9; /* Fond gris clair pour contraste */
+  border: 2px solid #0a1a3c; /* Bordure bleu nuit */
+  border-radius: 10px;
+  overflow: hidden;
+  width: 280px;
+  height: 200px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transform: translateY(40px);
+  opacity: 0;
+  transition: all 0.7s ease-in-out;
+}
+
+/* Animation quand visible */
+.photo-card.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Image interne */
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Coupe pour bien remplir */
+  transition: transform 0.5s ease;
+}
+
+/* Zoom au hover */
+.photo-card img:hover {
+  transform: scale(1.1);
+}
+
+/* why us */
+
+
+
+
+/* Section Why Choose Us */
+.why-choose-us {
+  padding: 70px 20px;
+  background: #ffffff; /* fond blanc */
+  text-align: center;
+  color: #0d1b2a; /* bleu nuit */
+}
+
+.why-choose-us h2 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  color: #0d1b2a; /* bleu nuit */
+}
+
+.why-choose-us .subtitle {
+  font-size: 1.1em;
+  color: #444;
+  margin-bottom: 40px;
+}
+
+.why-boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.why-box {
+  background: #f9f9f9;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 3px solid #c1121f; /* touche rouge */
+}
+
+.why-box h3 {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+  color: #0d1b2a;
+}
+
+.why-box p {
+  font-size: 0.95em;
+  color: #333;
+}
+
+.why-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* Bouton Learn More */
+.btn-wrapper {
+  margin-top: 20px;
+}
+
+.btn-more {
+  display: inline-block;
+  background: #0d1b2a; /* bleu nuit */
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-more:hover {
+  background: #c1121f; /* rouge */
+  transform: scale(1.05);
+}
+
+/* Animations scroll */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.animate-on-scroll.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
